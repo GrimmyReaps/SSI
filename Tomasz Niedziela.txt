@@ -1,0 +1,56 @@
+<?php
+
+//paginacja
+$page = isset($_GET['page']) ? $_GET['page'] : 1 ;                                          
+
+echo "<p class='content'>".$content[$page-1]."</p>";
+
+for($page = 1; $page <= count($content); $page++)
+{
+    echo '<a class="pageNum" href="article1.php?page='.$page.'">'.$page.'</a>';
+}
+
+//test input
+function test_input($data) 
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+//połączenie z bazą
+$servername = "localhost";
+$username = "admin";
+$password = "admin";
+$dbname = "blog";
+
+$_SESSION["conn"] = new mysqli($servername, $username, $password, $dbname);
+
+if ($_SESSION["conn"]->connect_error) {
+    die("Connection failed: " . $_SESSION["conn"]->connect_error);
+}
+
+//zapytania do bazy
+$query = 
+"
+SELECT p.ID_posta, p.tytuł, p.treść, u.nazwa_użytkownika 
+FROM Posty as p INNER JOIN użytkownicy as u 
+ON p.Autor = u.ID_użytkownika;
+";
+$result = mysqli_query($_SESSION["conn"], $query);
+if (mysqli_num_rows($result) > 0) {
+    $_SESSION["row"] = mysqli_fetch_assoc($result);
+} 
+else {
+    echo "0 results";
+}
+
+//przykład użycia
+$_SESSION["row"]["tytuł"]
+
+//ważne
+header('Location: index.php');
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+if(!isset($_SESSION[""]))
+?>

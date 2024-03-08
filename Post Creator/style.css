@@ -1,0 +1,65 @@
+header{
+    color: #4b0076;
+    background-color: #ffffff;
+    background-image: url('ball.png');
+    background-attachment: fixed;
+    background-size: 10% 10%;
+}
+body{
+    background-color: black;
+}
+div{
+    float: left;
+}
+span{
+    color: #ff0000;
+}
+footer{
+    position: fixed;
+    background-color: #ffffff;
+    color: #a000ff;
+    bottom: 10px;
+    left: 40%;
+}
+
+#Column1{
+    background-color: #ffffff;
+    /*top right bottom left*/
+    margin: 0 5% 5% 5%;
+    width: 65%
+}
+
+#Column2{
+    background-color: #ffffff;
+    width: 25%;
+}
+#Calendar{
+    text-align: center;
+    margin-block-end: 0.25em;
+}
+#Day{
+    
+    font-size: 55px;
+    margin: 0;
+    text-align: center;
+}
+#MonYear{
+    margin-block-start: 0;
+    text-align: center;
+}
+#Links{
+    text-align: center;
+    margin-block-start: 0;
+}
+#List{
+    margin-inline-start: 0;
+}
+#CommentBox{
+    margin: 0 0 0 5%;
+}
+#creator{
+    background-color: #ffffff;
+}
+#created{
+    background-color: #ffffff;
+}
